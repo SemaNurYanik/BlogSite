@@ -22,7 +22,7 @@ namespace BlogSite.Controllers
         {
             if (string.IsNullOrWhiteSpace(post.Content))
             {
-                return Json("POst content cannot be empty!");
+                return Json("Post content cannot be empty!");
             }
             db.Post.Add(post);
             db.SaveChanges();
@@ -58,17 +58,51 @@ namespace BlogSite.Controllers
             return Json("Post updated");
         }
 
+        [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            Post getPost = db.Post.Find(id);
-            if (getPost == null)
+            try
             {
-                return Json("Post not found");
+                Post getPost = db.Post.Find(id);
+                if (getPost == null)
+                {
+                    return Json("Post not found");
+                }
+                PostDto p = new PostDto();
+                p.City = getPost.City.CityName;
+                p.Content = getPost.Content;
+                p.Image = getPost.Image;
+                return Json(p);
             }
-            PostDto p = new PostDto();
-            p.City = getPost.City.CityName;
-            p.Content = getPost.Content;
-            p.Image = getPost.Image;
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message);
+            }
+            
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetAll()
+        {
+            try
+            {
+                List<PostDto> posts = new List<PostDto>();
+                foreach (Post item in db.Post)
+                {
+                    PostDto p = new PostDto();
+                    p.City = item.City.CityName;
+                    p.Content = item.Content;
+                    p.Image = item.Image;
+                    posts.Add(p);
+                }
+                return Json(posts);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
+            
         }
     }
 }
