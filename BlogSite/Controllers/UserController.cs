@@ -101,6 +101,7 @@ namespace BlogSite.Controllers
                     u.UserName = item.UserName;
                     u.EMail = item.EMail;
                     u.Password = item.Password;
+                    u.UserRole = item.UserRole.Name;
                     users.Add(u);
                 }
                 return Json(users);
