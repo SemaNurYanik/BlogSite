@@ -20,6 +20,7 @@ namespace BlogSite
         public string İmage { get; set; }
         public string Content { get; set; }
         public Nullable<bool> Active { get; set; }
+        public string Image { get; set; }
     
         public virtual Post Post { get; set; }
         public virtual User User { get; set; }

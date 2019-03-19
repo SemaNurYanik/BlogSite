@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BlogSiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BlogSiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="City">
           <Key>
             <PropertyRef Name="CityID" />
@@ -19,7 +19,7 @@
           <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserID" Type="int" />
           <Property Name="PostID" Type="int" />
-          <Property Name="İmage" Type="nchar" MaxLength="200" />
+          <Property Name="Image" Type="nchar" MaxLength="200" />
           <Property Name="Content" Type="nchar" MaxLength="300" />
           <Property Name="Active" Type="bit" />
         </EntityType>
@@ -135,8 +135,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BlogSiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -160,6 +159,7 @@
           <Property Name="Active" Type="Boolean" />
           <NavigationProperty Name="Post" Relationship="Self.FK_Comment_Post" FromRole="Comment" ToRole="Post" />
           <NavigationProperty Name="User" Relationship="Self.FK_Comment_User" FromRole="Comment" ToRole="User" />
+          <Property Name="Image" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Post">
           <Key>
@@ -295,10 +295,10 @@
           <EntitySetMapping Name="Comment">
             <EntityTypeMapping TypeName="BlogSiteModel.Comment">
               <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="CommentID" ColumnName="CommentID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="PostID" ColumnName="PostID" />
-                <ScalarProperty Name="İmage" ColumnName="İmage" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
               </MappingFragment>
