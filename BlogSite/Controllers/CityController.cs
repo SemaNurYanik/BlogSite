@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlogSite.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -81,7 +82,11 @@ namespace BlogSite.Controllers
                 {
                     return Json("City not found!");
                 }
-                return Json(getCity);
+
+                CityDto c = new CityDto();
+                c.CityID = getCity.CityID;
+                c.CityName = getCity.CityName;
+                return Json(c);
             }
             catch (Exception ex)
             {
@@ -94,7 +99,16 @@ namespace BlogSite.Controllers
         {
             try
             {
-                return Json(db.City.ToList());
+                List<CityDto> cities = new List<CityDto>();
+                foreach (City item in db.City)
+                {
+                    cities.Add(new CityDto()
+                    {
+                        CityID = item.CityID,
+                        CityName = item.CityName
+                    });
+                }
+                return Json(cities);
             }
             catch (Exception ex)
             {

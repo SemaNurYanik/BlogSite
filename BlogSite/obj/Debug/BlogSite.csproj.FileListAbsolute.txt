@@ -68,3 +68,6 @@ C:\Users\Sema\Documents\GitHub\BlogSite\BlogSite\bin\Microsoft.CodeDom.Providers
 C:\Users\Sema\Documents\GitHub\BlogSite\BlogSite\obj\Debug\BlogSite.csproj.CopyComplete
 C:\Users\Sema\Documents\GitHub\BlogSite\BlogSite\obj\Debug\BlogSite.dll
 C:\Users\Sema\Documents\GitHub\BlogSite\BlogSite\obj\Debug\BlogSite.pdb
+C:\Users\Sema\Documents\GitHub\BlogSite\BlogSite\bin\System.Web.Cors.dll
+C:\Users\Sema\Documents\GitHub\BlogSite\BlogSite\bin\System.Web.Http.Cors.dll
+C:\Users\Sema\Documents\GitHub\BlogSite\BlogSite\bin\System.Web.Http.Cors.xml

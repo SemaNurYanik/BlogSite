@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Cors;
+using System.Web.Http.Cors;
 
 namespace BlogSite
 {
@@ -10,6 +12,8 @@ namespace BlogSite
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            EnableCorsAttribute attr = new EnableCorsAttribute("http://localhost:62902", "*", "*");
+            config.EnableCors(attr);
 
             // Web API routes
             config.MapHttpAttributeRoutes();

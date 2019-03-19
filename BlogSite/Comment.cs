@@ -17,7 +17,6 @@ namespace BlogSite
         public int CommentID { get; set; }
         public Nullable<int> UserID { get; set; }
         public Nullable<int> PostID { get; set; }
-        public string İmage { get; set; }
         public string Content { get; set; }
         public Nullable<bool> Active { get; set; }
         public string Image { get; set; }

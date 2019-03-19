@@ -154,7 +154,6 @@
           <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserID" Type="Int32" />
           <Property Name="PostID" Type="Int32" />
-          <Property Name="İmage" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
           <Property Name="Content" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
           <Property Name="Active" Type="Boolean" />
           <NavigationProperty Name="Post" Relationship="Self.FK_Comment_Post" FromRole="Comment" ToRole="Post" />

@@ -111,16 +111,16 @@ namespace BlogSite.Controllers
 
                 return Json(ex.Message);
             }
-           
-        }       
 
-            [HttpGet]
+        }
+
+        [HttpGet]
         public IHttpActionResult GetAllByPost(int postId)
         {
             try
             {
                 List<CommentDto> comments = new List<CommentDto>();
-                foreach (Comment item in db.Comment.Where(x=>x.PostID==postId))
+                foreach (Comment item in db.Comment.Where(x => x.PostID == postId))
                 {
                     CommentDto c = new CommentDto();
                     c.UserId = item.User.UserID;
