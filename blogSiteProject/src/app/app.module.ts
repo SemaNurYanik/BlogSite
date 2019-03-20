@@ -4,11 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
+import { CityComponent } from './city/city.component';
+import { CityAddComponent } from './city-add/city-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    CityComponent,
+    CityAddComponent
   ],
   imports: [
     BrowserModule,
