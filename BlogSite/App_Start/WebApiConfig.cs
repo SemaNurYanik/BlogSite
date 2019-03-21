@@ -12,8 +12,10 @@ namespace BlogSite
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            EnableCorsAttribute attr = new EnableCorsAttribute("http://localhost:62902", "*", "*");
+            EnableCorsAttribute attr = new EnableCorsAttribute("http://localhost:4200", "*", "*");
             config.EnableCors(attr);
+            //EnableCorsAttribute attr = new EnableCorsAttribute("http://localhost:62902", "*", "*");
+            //config.EnableCors(attr);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
