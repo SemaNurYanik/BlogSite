@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { CityComponent } from './city/city.component';
 import { CityAddComponent } from './city-add/city-add.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
+  
   declarations: [
     AppComponent,
     NavComponent,
@@ -16,7 +18,10 @@ import { CityAddComponent } from './city-add/city-add.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,    
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

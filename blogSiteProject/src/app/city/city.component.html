@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+      <div *ngFor="let city of cities" class="col-md-6">
+        <h2 class="mt-4 pt-3">{{city.SehirAd}}</h2>
+        <div class="card mb-4 shadow-sm">
+          <!-- <img class="card-img-top" 
+           src="{{city.photoUrl}}" style="height: 225px; width: 100%" alt="Card image cap"> -->
+          <div class="card-body">
+            <p class="card-text"   >
+             burası resim ve post kısmı
+            </p>   
+                <!-- <p class="card-text" [innerHTML]="city.SehirAd"></p> -->
+           
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" routerLink="/cityDetail/{{city.id}}" class="btn btn-sm btn-outline-secondary">View</button>
+                
+              </div>
+              <!-- <small class="text-muted">Hello</small> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
