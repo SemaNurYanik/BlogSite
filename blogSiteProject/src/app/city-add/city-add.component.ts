@@ -7,10 +7,6 @@ import {
   FormBuilder
 } from "@angular/forms";
 import { City } from "../models/city";
-
-
-
-
 @Component({
   selector: "app-city-add",
   templateUrl: "./city-add.component.html",
@@ -22,21 +18,16 @@ export class CityAddComponent implements OnInit {
     private cityService: CityService,
     private formBuilder: FormBuilder   
   ) {}
-
   city: City;
   cityAddForm: FormGroup;
-
   createCityForm() {
     this.cityAddForm = this.formBuilder.group({
-      CityName: ["", Validators.required]
-     
+      CityName: ["", Validators.required]     
     });
   }
-
   ngOnInit() {
    this.createCityForm();
   }
-
   add(){
     if(this.cityAddForm.valid){
       this.city = Object.assign({},this.cityAddForm.value)      
